@@ -332,6 +332,139 @@ body {
     .sub-img-box { width: 40%; left: 5%; bottom: 0; }
     .info-card { left: 5%; }
 }
+/* ========================
+   NEW HERO VISUAL (ANIMATED)
+   ======================== */
+.hero-visual {
+    height: 500px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    overflow: hidden; /* Taake blobs bahar na niklein */
+}
+
+.healing-animation-container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* --- ANIMATED BLOBS --- */
+.blob {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(40px);
+    opacity: 0.4;
+    animation: move-and-morph 15s infinite alternate ease-in-out;
+}
+
+.blob-1 {
+    width: 300px; height: 300px;
+    background: var(--primary); /* Blue */
+    top: 10%; left: 10%;
+    animation-delay: 0s;
+}
+
+.blob-2 {
+    width: 250px; height: 250px;
+    background: var(--healing); /* Green */
+    bottom: 20%; right: 10%;
+    animation-delay: -5s;
+}
+
+.blob-3 {
+    width: 200px; height: 200px;
+    background: var(--accent); /* Red */
+    bottom: 10%; left: 30%;
+    animation-delay: -10s;
+    opacity: 0.3;
+}
+
+@keyframes move-and-morph {
+    0% {
+        border-radius: 50%;
+        transform: translate(0, 0) scale(1);
+    }
+    33% {
+        border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
+        transform: translate(30px, -20px) scale(1.1);
+    }
+    66% {
+        border-radius: 40% 60% 70% 30% / 40% 50% 60% 50%;
+        transform: translate(-20px, 30px) scale(0.9);
+    }
+    100% {
+        border-radius: 50%;
+        transform: translate(0, 0) scale(1);
+    }
+}
+
+/* --- CENTRAL ICON --- */
+.center-icon-container {
+    position: relative;
+    z-index: 5;
+    width: 120px;
+    height: 120px;
+    background: white;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    font-size: 3rem;
+    color: var(--primary);
+    border: 4px solid rgba(255,255,255,0.5);
+    animation: float-center 6s ease-in-out infinite;
+}
+
+@keyframes float-center {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+}
+
+/* --- FLOATING ELEMENTS --- */
+.floating-element {
+    position: absolute;
+    background: rgba(255, 255, 255, 0.9);
+    padding: 8px 15px;
+    border-radius: 30px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+    font-weight: 600;
+    font-size: 0.9rem;
+    color: var(--dark);
+    z-index: 6;
+    animation: float-element 8s ease-in-out infinite;
+}
+
+.floating-element i { font-size: 1.1rem; }
+
+.elem-1 { top: 25%; right: 20%; animation-delay: 1s; }
+.elem-2 { bottom: 30%; left: 15%; animation-delay: 2s; }
+
+@keyframes float-element {
+    0%, 100% { transform: translate(0, 0); }
+    50% { transform: translate(10px, -15px); }
+}
+
+/* ========================
+   MOBILE RESPONSIVE
+   ======================== */
+@media (max-width: 991px) {
+    .hero-visual {
+        height: 400px;
+        margin-top: 50px;
+    }
+    .blob-1 { width: 200px; height: 200px; }
+    .blob-2 { width: 180px; height: 180px; }
+    .blob-3 { width: 150px; height: 150px; }
+}
 </style>
 <!--drugssssssssss-->
 <style>
@@ -1228,69 +1361,69 @@ h5.text-white::after {
     
     <header class="hero-section">
         <div class="container h-100">
-            <div class="row h-100 align-items-center">
-                
-                <!-- LEFT SIDE: TEXT CONTENT -->
-                <div class="col-lg-6 hero-text" data-aos="fade-right">
-                    <span class="tagline">
-                        <i class="fa-solid fa-heart-pulse"></i> SAKOON REHABILITATION
-                    </span>
-                    
-                    <h1>Your Journey to <br> <span class="highlight">Peace & Recovery</span> Starts Here</h1>
-                    
-                    <p>We provide world-class addiction treatment and psychiatric care in a safe, supportive environment. Reclaim your life with our expert team.</p>
-                    
-                    <div class="hero-btns">
-                        <a href="#contact" class="btn-primary-hero">Get Help Now <i class="fa-solid fa-arrow-right ms-2"></i></a>
-                        <a href="#services" class="btn-secondary-hero"><i class="fa-solid fa-circle-play"></i> How We Work</a>
-                    </div>
+            <div class="row h-100 align-items-center hero-row">
+    
+    <!-- LEFT SIDE: TEXT CONTENT (Same as before) -->
+    <div class="col-lg-6 hero-text" data-aos="fade-right">
+        <span class="tagline">
+            <i class="fa-solid fa-heart-pulse"></i> SAKOON REHABILITATION
+        </span>
+        
+        <h1>Your Journey to <br> <span class="highlight">Peace & Recovery</span> Starts Here</h1>
+        
+        <p>We provide world-class addiction treatment and psychiatric care in a safe, supportive environment. Reclaim your life with our expert team.</p>
+        
+        <div class="hero-btns">
+            <a href="#contact" class="btn-primary-hero">Get Help Now <i class="fa-solid fa-arrow-right ms-2"></i></a>
+            <a href="#services" class="btn-secondary-hero"><i class="fa-solid fa-circle-play"></i> How We Work</a>
+        </div>
 
-                    <!-- Trust Badges -->
-                    <div class="trust-badges mt-5">
-                        <div class="badge-item">
-                            <i class="fa-solid fa-user-doctor"></i>
-                            <div>
-                                <h5>Expert Doctors</h5>
-                                <small>24/7 Available</small>
-                            </div>
-                        </div>
-                        <div class="divider"></div>
-                        <div class="badge-item">
-                            <i class="fa-solid fa-shield-heart"></i>
-                            <div>
-                                <h5>100% Private</h5>
-                                <small>Confidential Care</small>
-                            </div>
-                        </div>
-                    </div>
+        <!-- Trust Badges -->
+        <div class="trust-badges mt-5">
+            <div class="badge-item">
+                <i class="fa-solid fa-user-doctor"></i>
+                <div>
+                    <h5>Expert Doctors</h5>
+                    <small>24/7 Available</small>
                 </div>
-
-                <!-- RIGHT SIDE: CREATIVE IMAGE COMPOSITION -->
-                <div class="col-lg-6 hero-visual" data-aos="fade-left">
-                    <div class="image-composition">
-                        <!-- Main Large Image -->
-                        <div class="main-img-box">
-                            <img src="./images/h2.jpg" alt="Recovery" class="main-img">
-                        </div>
-                        
-                        <!-- Floating Small Image -->
-                        <div class="sub-img-box">
-                            <img src="./images/h1.png" alt="Happy Patient" class="sub-img">
-                        </div>
-
-                        <!-- Decorative Elements -->
-                        <div class="circle-decoration"></div>
-                        <div class="dots-pattern"></div>
-                        
-                        <!-- Floating Card -->
-                        <div class="info-card">
-                            <i class="fa-solid fa-star text-warning"></i>
-                            <span>Top Rated Center</span>
-                        </div>
-                    </div>
-                </div>
-
             </div>
+            <div class="divider"></div>
+            <div class="badge-item">
+                <i class="fa-solid fa-shield-heart"></i>
+                <div>
+                    <h5>100% Private</h5>
+                    <small>Confidential Care</small>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- RIGHT SIDE: NEW ANIMATED VISUAL (No Static Pics) -->
+    <div class="col-lg-6 hero-visual" data-aos="fade-left">
+        <div class="healing-animation-container">
+            <!-- Animated Blobs -->
+            <div class="blob blob-1"></div>
+            <div class="blob blob-2"></div>
+            <div class="blob blob-3"></div>
+            
+            <!-- Central Icon/Logo Idea -->
+            <div class="center-icon-container">
+                <i class="fa-solid fa-hands-holding-child"></i>
+            </div>
+
+            <!-- Floating Elements -->
+            <div class="floating-element elem-1">
+                <i class="fa-solid fa-leaf text-success"></i>
+                <span>Growth</span>
+            </div>
+            <div class="floating-element elem-2">
+                <i class="fa-solid fa-dove text-primary"></i>
+                <span>Peace</span>
+            </div>
+        </div>
+    </div>
+
+</div>
         </div>
     </header>
 
@@ -1767,7 +1900,7 @@ h5.text-white::after {
             <div class="col-lg-6 text-center" data-aos="fade-left">
                 <div class="ceo-img-wrapper">
                     <!-- Apni image ka path lagana -->
-                    <img src="./images/ceo.jpg" alt="Mr. Imran - CEO" class="ceo-img">
+                    <img src="./images/ceoooo-removebg-preview.png" style="background: none;" alt="Mr. Imran - CEO" class="ceo-img">
                     
                     <!-- Decorative Elements -->
                     <div class="shape-bg"></div>

@@ -7,267 +7,280 @@
     
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
     <!-- AOS Animation -->
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    
     <!-- Main CSS -->
     <link rel="stylesheet" href="style.css">
 
-   <style>
-    /* --- PAGE SPECIFIC STYLES --- */
-    
-    /* 1. Header Section */
-    .page-header {
-        background: linear-gradient(rgba(13, 110, 253, 0.85), rgba(25, 135, 84, 0.8)), 
-                    url('../images/of.jpg');
-        background-size: cover;
-        background-position: center;
-        height: 50vh;
-        min-height: 350px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        text-align: center;
-        color: white;
-        position: relative;
-        margin-bottom: 80px;
-    }
+    <style>
+        /* --- PAGE SPECIFIC STYLES --- */
+        
+        /* 1. Header Section */
+        .serv-header {
+            /* Medical/Clean Background Image */
+            background: linear-gradient(to bottom, rgba(17, 17, 58, 0.85), rgba(17, 17, 58, 0.95)), 
+                        url('https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?q=80&w=1920&auto=format&fit=crop');
+            background-size: cover;
+            background-position: center;
+            height: 50vh;
+            min-height: 350px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+            position: relative;
+            margin-bottom: 80px;
+        }
 
-    /* Back Button */
-    .btn-back-home {
-        position: absolute;
-        top: 30px; left: 30px;
-        text-decoration: none;
-        color: white;
-        font-weight: 600;
-        border: 1px solid rgba(255,255,255,0.4);
-        padding: 10px 25px;
-        border-radius: 50px;
-        background: rgba(255,255,255,0.15);
-        backdrop-filter: blur(5px);
-        transition: 0.3s;
-    }
-    .btn-back-home:hover { background: white; color: var(--primary); }
+        .serv-header h1 {
+            font-size: 3.5rem;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 15px;
+            text-shadow: 0 5px 15px rgba(0,0,0,0.3);
+        }
 
-    .page-header h1 { font-size: 3.5rem; font-weight: 800; text-transform: uppercase; }
-    .page-header p { font-size: 1.2rem; opacity: 0.9; }
+        .serv-header p {
+            font-size: 1.1rem;
+            font-weight: 300;
+            opacity: 0.9;
+            max-width: 700px;
+            margin: 0 auto;
+        }
 
-    /* CARD STYLING */
-    .flip-card {
-        background-color: transparent;
-        width: 100%;
-        height: 350px;
-        margin-bottom: 30px;
-        transition: 0.4s;
-        border-radius: 20px;
-        overflow: hidden;
-        box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-    }
+        .header-badge {
+            background-color: white;
+            color: rgb(17, 17, 58);
+            padding: 8px 20px;
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 0.85rem;
+            letter-spacing: 1px;
+            display: inline-block;
+            margin-bottom: 20px;
+        }
 
-    /* Hover color change */
-    .flip-card:hover {
-        background: linear-gradient(135deg, var(--primary) 0%, var(--healing) 100%);
-        color: white;
-    }
+        /* 2. Services Grid */
+        .services-page-section {
+            padding-bottom: 100px;
+            background-color: #fff;
+        }
 
-    .flip-card-inner {
-        padding: 30px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        flex-direction: column;
-        text-align: center;
-        height: 100%;
-        border-radius: 20px;
-    }
+        /* --- CARD STYLING (Icons Only) --- */
+        .service-box {
+            background: #fff;
+            border-radius: 15px;
+            padding: 40px 25px;
+            text-align: center;
+            border: 1px solid #eee;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+            transition: all 0.3s ease;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
 
-    .icon-box-flip {
-        width: 80px; height: 80px;
-        background: rgba(13, 110, 253, 0.1);
-        border-radius: 50%;
-        display: flex; align-items: center; justify-content: center;
-        color: var(--primary);
-        font-size: 35px;
-        margin-bottom: 20px;
-        transition: 0.3s;
-    }
+        /* Icon Box */
+        .serv-icon {
+            width: 80px;
+            height: 80px;
+            background: rgba(17, 17, 58, 0.05);
+            color: rgb(17, 17, 58);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 30px;
+            margin-bottom: 25px;
+            transition: 0.3s;
+        }
 
-    .flip-card:hover .icon-box-flip {
-        background: rgba(255,255,255,0.2);
-        transform: scale(1.1);
-        color: rgb(29, 48, 166);
-    }
+        /* Hover Effects */
+        .service-box:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(17, 17, 58, 0.15);
+            border-color: rgb(17, 17, 58);
+        }
 
-    .flip-card-inner h3 {
-        font-size: 1.5rem;
-        font-weight: 700;
-        color: var(--dark);
-    }
+        .service-box:hover .serv-icon {
+            background: rgb(17, 17, 58);
+            color: white;
+        }
 
-    .flip-card-inner p {
-        font-size: 0.9rem;
-        color: #777;
-        margin-top: 10px;
-    }
+        /* Text */
+        .service-box h3 {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: rgb(17, 17, 58);
+            margin-bottom: 15px;
+            text-transform: uppercase;
+        }
 
-    .flip-card:hover h3,
-    .flip-card:hover p {
-        color: rgb(29, 48, 166);
-    }
+        .service-box p {
+            color: #666;
+            font-size: 0.9rem;
+            line-height: 1.6;
+            margin-bottom: 25px;
+            flex-grow: 1;
+        }
 
-    @media (max-width: 991px) {
-        .page-header h1 { font-size: 2.2rem; }
-        .flip-card { height: 300px; }
-    }
-</style>
+        /* Button */
+        .btn-get-service {
+            background: transparent;
+            color: rgb(17, 17, 58);
+            border: 1px solid rgb(17, 17, 58);
+            padding: 8px 25px;
+            border-radius: 50px;
+            font-size: 12px;
+            font-weight: 700;
+            text-decoration: none;
+            transition: 0.3s;
+            text-transform: uppercase;
+        }
 
+        .btn-get-service:hover {
+            background: rgb(17, 17, 58);
+            color: white;
+        }
+
+        /* --- RESPONSIVE --- */
+        
+        /* Laptop: 3 Cards Row */
+        @media (min-width: 992px) {
+            .container { max-width: 1200px; }
+            .col-lg-4 { width: 33.3333%; }
+        }
+
+        /* Mobile: 2 Cards Grid */
+        @media (max-width: 768px) {
+            .serv-header h1 { font-size: 2rem; }
+            .serv-header { height: 40vh; min-height: 300px; }
+
+            .row.g-4 {
+                --bs-gutter-x: 10px; 
+                --bs-gutter-y: 15px;
+            }
+            
+            .col-6 {
+                width: 50%;
+                padding: 0 5px;
+            }
+            
+            .service-box {
+                padding: 20px 10px;
+                border-radius: 10px;
+            }
+
+            .serv-icon {
+                width: 50px; height: 50px; font-size: 20px; margin-bottom: 15px;
+            }
+            
+            .service-box h3 { font-size: 0.85rem; margin-bottom: 8px; }
+            .service-box p { font-size: 0.7rem; margin-bottom: 15px; line-height: 1.4; }
+            
+            .btn-get-service { font-size: 9px; padding: 5px 15px; }
+        }
+    </style>
 </head>
 <body>
 
-    <!-- NAVBAR (Short Version for Inner Page) -->
-     
-
     <!-- HEADER -->
-    <header class="page-header">
-        <a href="../index.html" class="btn-back-home"><i class="fa-solid fa-arrow-left me-2"></i> Home</a>
+    <header class="serv-header">
         <div class="container" data-aos="fade-up">
-             <h1 class="display-4 fw-bold">Our Treatment Programs</h1>
-            <p class="lead mt-3 text-light">Comprehensive care for mind, body, and soul.</p>
+            <span class="header-badge">CLINICAL EXCELLENCE</span>
+            <h1 class="display-4 fw-bold">Our Treatment Programs</h1>
+            <p class="lead mt-3 text-light opacity-75">Comprehensive care for mind, body, and soul.</p>
         </div>
     </header>
 
     <!-- SERVICES GRID -->
-    <section class="container pb-5">
-        <div class="row g-4 justify-content-center">
-
-            <!-- Service 1: Detox -->
-            <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
-                <div class="flip-card">
-                    <div class="flip-card-inner">
-                        <!-- Front -->
-                        <div class="flip-card-front">
-                            <div class="icon-box-flip"><i class="fa-solid fa-droplet-slash"></i></div>
-                            <h3>Medical Detox</h3>
-                            <p>Safe & monitored withdrawal management.</p>
-                        </div>
-                        <!-- Back -->
-                        <div class="flip-card-back">
-                            <h3>Medical Detoxification</h3>
-                            <p>Our 24/7 nursing staff ensures a safe and comfortable detox process, managing withdrawal symptoms with expert medical care.</p>
-                            
-                        </div>
+    <section class="services-page-section">
+        <div class="container">
+            
+            <!-- Grid Row (Desktop: 3, Mobile: 2) -->
+            <div class="row g-4 row-cols-2 row-cols-md-2 row-cols-lg-3 justify-content-center">
+                
+                <!-- 1. Detox -->
+                <div class="col" data-aos="fade-up" data-aos-delay="100">
+                    <div class="service-box">
+                        <div class="serv-icon"><i class="fa-solid fa-droplet-slash"></i></div>
+                        <h3>Medical Detox</h3>
+                        <p>Safe and monitored withdrawal management under expert supervision.</p>
+                        <a href="contact.html" class="btn-get-service">Get Service</a>
                     </div>
                 </div>
-            </div>
 
-            <!-- Service 2: Addiction Treatment -->
-            <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
-                <div class="flip-card">
-                    <div class="flip-card-inner">
-                        <!-- Front -->
-                        <div class="flip-card-front">
-                            <div class="icon-box-flip"><i class="fa-solid fa-hand-holding-medical"></i></div>
-                            <h3>Addiction Rehab</h3>
-                            <p>Recovery from drugs & alcohol dependency.</p>
-                        </div>
-                        <!-- Back -->
-                        <div class="flip-card-back">
-                            <h3>Rehabilitation Program</h3>
-                            <p>A structured program including individual therapy, group sessions, and lifestyle changes to ensure long-term sobriety.</p>
-                             
-                        </div>
+                <!-- 2. Rehab -->
+                <div class="col" data-aos="fade-up" data-aos-delay="200">
+                    <div class="service-box">
+                        <div class="serv-icon"><i class="fa-solid fa-hand-holding-medical"></i></div>
+                        <h3>Addiction Rehab</h3>
+                        <p>Complete recovery programs from drugs and alcohol dependency.</p>
+                        <a href="contact.html" class="btn-get-service">Get Service</a>
                     </div>
                 </div>
-            </div>
 
-            <!-- Service 3: Psychiatric Care -->
-            <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="300">
-                <div class="flip-card">
-                    <div class="flip-card-inner">
-                        <!-- Front -->
-                        <div class="flip-card-front">
-                            <div class="icon-box-flip"><i class="fa-solid fa-brain"></i></div>
-                            <h3>Psychiatric Care</h3>
-                            <p>Treatment for depression, anxiety & trauma.</p>
-                        </div>
-                        <!-- Back -->
-                        <div class="flip-card-back">
-                            <h3>Mental Health</h3>
-                            <p>Expert psychiatrists provide diagnosis and treatment for dual diagnosis, anxiety, depression, and bipolar disorders.</p>
-                            
-                        </div>
+                <!-- 3. Psychiatry -->
+                <div class="col" data-aos="fade-up" data-aos-delay="300">
+                    <div class="service-box">
+                        <div class="serv-icon"><i class="fa-solid fa-brain"></i></div>
+                        <h3>Psychiatric Care</h3>
+                        <p>Clinical treatment for depression, anxiety, trauma and disorders.</p>
+                        <a href="contact.html" class="btn-get-service">Get Service</a>
                     </div>
                 </div>
-            </div>
 
-            <!-- Service 4: Family Counseling -->
-            <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="400">
-                <div class="flip-card">
-                    <div class="flip-card-inner">
-                        <!-- Front -->
-                        <div class="flip-card-front">
-                            <div class="icon-box-flip"><i class="fa-solid fa-users-rays"></i></div>
-                            <h3>Family Therapy</h3>
-                            <p>Healing relationships & building support.</p>
-                        </div>
-                        <!-- Back -->
-                        <div class="flip-card-back">
-                            <h3>Family Counseling</h3>
-                            <p>Addiction affects the whole family. We help rebuild trust and communication to create a supportive home environment.</p>
-                             
-                        </div>
+                <!-- 4. Family Therapy -->
+                <div class="col" data-aos="fade-up" data-aos-delay="400">
+                    <div class="service-box">
+                        <div class="serv-icon"><i class="fa-solid fa-users-rays"></i></div>
+                        <h3>Family Therapy</h3>
+                        <p>Healing relationships and building a strong support system.</p>
+                        <a href="contact.html" class="btn-get-service">Get Service</a>
                     </div>
                 </div>
-            </div>
 
-            <!-- Service 5: 12-Step Program -->
-            <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="500">
-                <div class="flip-card">
-                    <div class="flip-card-inner">
-                        <!-- Front -->
-                        <div class="flip-card-front">
-                            <div class="icon-box-flip"><i class="fa-solid fa-stairs"></i></div>
-                            <h3>12-Step Program</h3>
-                            <p>Spiritual & structured path to recovery.</p>
-                        </div>
-                        <!-- Back -->
-                        <div class="flip-card-back">
-                            <h3>Spiritual Recovery</h3>
-                            <p>Following the world-renowned 12-step methodology to help patients find spiritual strength and community support.</p>
-                             
-                        </div>
+                <!-- 5. 12-Step -->
+                <div class="col" data-aos="fade-up" data-aos-delay="500">
+                    <div class="service-box">
+                        <div class="serv-icon"><i class="fa-solid fa-stairs"></i></div>
+                        <h3>12-Step Program</h3>
+                        <p>Spiritual and structured path to long-term recovery.</p>
+                        <a href="contact.html" class="btn-get-service">Get Service</a>
                     </div>
                 </div>
-            </div>
 
-            <!-- Service 6: Inpatient Care -->
-            <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="600">
-                <div class="flip-card">
-                    <div class="flip-card-inner">
-                        <!-- Front -->
-                        <div class="flip-card-front">
-                            <div class="icon-box-flip"><i class="fa-solid fa-bed-pulse"></i></div>
-                            <h3>Inpatient Care</h3>
-                            <p>Residential treatment with 24/7 support.</p>
-                        </div>
-                        <!-- Back -->
-                        <div class="flip-card-back">
-                            <h3>Residential Stay</h3>
-                            <p>A comfortable, luxury environment where patients can focus entirely on their recovery away from triggers.</p>
-                            
-                        </div>
+                <!-- 6. Inpatient -->
+                <div class="col" data-aos="fade-up" data-aos-delay="600">
+                    <div class="service-box">
+                        <div class="serv-icon"><i class="fa-solid fa-bed-pulse"></i></div>
+                        <h3>Inpatient Care</h3>
+                        <p>Residential treatment with 24/7 medical and emotional support.</p>
+                        <a href="contact.html" class="btn-get-service">Get Service</a>
                     </div>
                 </div>
-            </div>
 
+                <!-- 7. Outpatient -->
+                <div class="col" data-aos="fade-up" data-aos-delay="700">
+                    <div class="service-box">
+                        <div class="serv-icon"><i class="fa-solid fa-notes-medical"></i></div>
+                        <h3>Outpatient Care</h3>
+                        <p>Flexible treatment options while living at home.</p>
+                        <a href="contact.html" class="btn-get-service">Get Service</a>
+                    </div>
+                </div>
+
+            </div>
         </div>
     </section>
-
-    <!-- FOOTER (Simple Version) -->
-    <footer class="bg-dark text-white text-center py-4 mt-5">
-        <p class="m-0">&copy; 2025 Sukoon Rehabilitation. All Rights Reserved.</p>
-    </footer>
 
     <!-- Scripts -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
