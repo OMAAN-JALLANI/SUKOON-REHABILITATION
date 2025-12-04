@@ -526,8 +526,8 @@ body {
 </style>
 <!--impactttttt-->
 <style>
-/* ========================
-   IMPACT SECTION (Circular)
+    /* ========================
+   IMPACT SECTION (ROTATING CIRCLES)
    ======================== */
 .impact-section {
     padding: 80px 0;
@@ -535,7 +535,7 @@ body {
 }
 
 .section-subtitle {
-    color: var(--primary); /* Green */
+    color: var(--primary); /* Blue */
     font-weight: 700;
     text-transform: uppercase;
     font-size: 13px;
@@ -558,7 +558,7 @@ body {
     line-height: 1.6;
 }
 
-/* Circular Counter Box */
+/* --- CIRCLE WRAPPER --- */
 .impact-circle {
     display: flex;
     flex-direction: column;
@@ -566,32 +566,52 @@ body {
     text-align: center;
 }
 
+.circle-wrapper {
+    position: relative;
+    width: 140px;
+    height: 140px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* --- ROTATING RING (Ghoomne wala hissa) --- */
+.spinning-ring {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    border: 4px solid transparent;
+    border-top-color: var(--primary); /* Blue */
+    border-right-color: var(--healing); /* Green */
+    border-bottom-color: var(--accent); /* Red */
+    border-left-color: var(--primary);
+    animation: spin 2s linear infinite; /* Ghoomne ki speed */
+    box-shadow: 0 0 15px rgba(0,0,0,0.1);
+}
+
+/* Rotation Animation */
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* Inner Content (Static) */
 .circle-content {
+    position: relative;
     width: 120px;
     height: 120px;
     background: white;
-    border: 4px solid var(--primary); /* Green Border */
     border-radius: 50%;
     display: flex;
     justify-content: center;
     align-items: center;
-    box-shadow: 0 10px 30px rgba(10, 135, 14, 0.15); /* Green Shadow */
-    margin-bottom: 15px;
-    position: relative;
-}
-
-/* Inner Ring (Optional decoration) */
-.circle-content::after {
-    content: '';
-    position: absolute;
-    width: 105px;
-    height: 105px;
-    border-radius: 50%;
-    border: 2px dashed var(--accent); /* Gold Dashed Line */
+    z-index: 2;
+    box-shadow: inset 0 0 10px rgba(0,0,0,0.05);
 }
 
 .counter-value {
-    font-size: 2.5rem;
+    font-size: 2.2rem;
     font-weight: 800;
     color: var(--dark);
     margin: 0;
@@ -600,7 +620,7 @@ body {
 .circle-content span {
     font-size: 1.5rem;
     font-weight: 800;
-    color: var(--accent); /* Gold Plus */
+    color: var(--accent); /* Red Plus */
     margin-left: 2px;
 }
 
@@ -609,6 +629,7 @@ body {
     font-weight: 700;
     color: #555;
     text-transform: uppercase;
+    letter-spacing: 1px;
 }
 
 /* Mobile Responsive */
@@ -620,17 +641,17 @@ body {
 
     .section-desc { margin: 0 auto 30px; }
 
-    .circle-content {
-        width: 100px;
-        height: 100px;
+    .circle-wrapper {
+        width: 110px;
+        height: 110px;
     }
     
-    .circle-content::after {
-        width: 85px;
-        height: 85px;
+    .circle-content {
+        width: 95px;
+        height: 95px;
     }
 
-    .counter-value { font-size: 2rem; }
+    .counter-value { font-size: 1.8rem; }
 }
 </style>
 <!--LIFeeeeeeeeee-->
@@ -809,7 +830,7 @@ body {
 
 .ceo-img {
     width: 100%;
-    max-width: 400px; /* Image bohot bari na ho */
+    max-width: 300px; /* Image bohot bari na ho */
     border-radius: 20px;
     box-shadow: 0 20px 50px rgba(0,0,0,0.15);
     position: relative;
@@ -1249,12 +1270,12 @@ h5.text-white::after {
                     <div class="image-composition">
                         <!-- Main Large Image -->
                         <div class="main-img-box">
-                            <img src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?q=80&w=600&auto=format&fit=crop" alt="Recovery" class="main-img">
+                            <img src="./images/h1.png" alt="Recovery" class="main-img">
                         </div>
                         
                         <!-- Floating Small Image -->
                         <div class="sub-img-box">
-                            <img src="https://images.unsplash.com/photo-1527613426441-4da17471b66d?q=80&w=400&auto=format&fit=crop" alt="Happy Patient" class="sub-img">
+                            <img src="./images/h2.jpg" alt="Happy Patient" class="sub-img">
                         </div>
 
                         <!-- Decorative Elements -->
@@ -1446,13 +1467,13 @@ h5.text-white::after {
     }
 </script>
 
-<!--impacttttttt--> 
-<section class="impact-section" data-aos="fade-up">
+<!--impacttttttt-->  
+<section class="impact-section" id="impact">
     <div class="container">
         <div class="row align-items-center gy-4">
             
             <!-- Left: Text -->
-            <div class="col-lg-6 text-center text-lg-start">
+            <div class="col-lg-6 text-center text-lg-start" data-aos="fade-right">
                 <span class="section-subtitle">Our Impact</span>
                 <h2 class="section-title">Restoring Lives, One Step at a Time</h2>
                 <p class="section-desc mx-auto mx-lg-0">
@@ -1460,29 +1481,35 @@ h5.text-white::after {
                 </p>
             </div>
 
-            <!-- Right: Circular Counters -->
-            <div class="col-lg-6">
+            <!-- Right: Rotating Counters -->
+            <div class="col-lg-6" data-aos="fade-left">
                 <div class="row justify-content-center g-4">
                     
-                    <!-- Counter 1: Dealt Patients -->
+                    <!-- Counter 1: Successful Cases -->
                     <div class="col-6 col-sm-4">
                         <div class="impact-circle">
-                            <div class="circle-content">
-                                <h3 class="counter-value" data-target="200">0</h3>
-                                <span>+</span>
+                            <div class="circle-wrapper">
+                                <div class="spinning-ring"></div> <!-- Ghoomne wala ring -->
+                                <div class="circle-content">
+                                    <h3 class="counter-value" data-target="200">0</h3>
+                                    <span>+</span>
+                                </div>
                             </div>
-                            <p>Patients Dealt</p>
+                            <p class="mt-3">Patients Dealt</p>
                         </div>
                     </div>
 
                     <!-- Counter 2: Recovered Patients -->
                     <div class="col-6 col-sm-4">
                         <div class="impact-circle">
-                            <div class="circle-content">
-                                <h3 class="counter-value" data-target="58">0</h3>
-                                <span>+</span>
+                            <div class="circle-wrapper">
+                                <div class="spinning-ring"></div>
+                                <div class="circle-content">
+                                    <h3 class="counter-value" data-target="58">0</h3>
+                                    <span>+</span>
+                                </div>
                             </div>
-                            <p>Recovered Patients</p>
+                            <p class="mt-3">Recovered Patients</p>
                         </div>
                     </div>
 
@@ -1491,26 +1518,43 @@ h5.text-white::after {
 
         </div>
     </div>
-</section><!-- Counter Animation Script -->
+</section> <!-- Counter Script -->
 <script>
-    // Simple Counter Animation
+    // Jab user scroll kar k section par aye tab animation shuru ho
     const counters = document.querySelectorAll('.counter-value');
-    const speed = 200; // The lower the slower
+    const speed = 200; 
 
-    counters.forEach(counter => {
-        const updateCount = () => {
-            const target = +counter.getAttribute('data-target');
-            const count = +counter.innerText;
-            const inc = target / speed;
+    const animateCounters = () => {
+        counters.forEach(counter => {
+            const updateCount = () => {
+                const target = +counter.getAttribute('data-target');
+                const count = +counter.innerText;
+                const inc = target / speed;
 
-            if (count < target) {
-                counter.innerText = Math.ceil(count + inc);
-                setTimeout(updateCount, 20);
-            } else {
-                counter.innerText = target;
+                if (count < target) {
+                    counter.innerText = Math.ceil(count + inc);
+                    setTimeout(updateCount, 20);
+                } else {
+                    counter.innerText = target;
+                }
+            };
+            updateCount();
+        });
+    };
+
+    // Intersection Observer to trigger animation on scroll
+    let options = { threshold: 0.5 };
+    let observer = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+            if(entry.isIntersecting){
+                animateCounters();
+                observer.unobserve(entry.target);
             }
-        };
-        updateCount();
+        });
+    }, options);
+
+    document.querySelectorAll('.impact-section').forEach(section => {
+        observer.observe(section);
     });
 </script>
 
