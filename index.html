@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sukoon Rehabilitation Center</title>
+    <title>Sakoon Rehabilitation Center</title>
     
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -1015,6 +1015,165 @@ body {
     }
 }
 </style>
+<!--footerrrrr-->
+<style> 
+.footer-section {
+    background-color:#0d6efd; /* Deep Dark Green Background (Theme Match) */
+    padding: 80px 0 30px;
+    color: white;
+    font-family: 'Poppins', sans-serif;
+    position: relative;
+    border-top: 5px solid #13275f; /* Gold Top Border (Optional) */
+}
+
+/* --- LOGO --- */
+.footer-logo img {
+    height: 60px;
+    width: auto;
+    object-fit: contain;
+    filter: brightness(0) invert(1); /* Logo ko White karne k liye (Agar dark hai) */
+    margin-bottom: 15px;
+}
+
+/* --- TEXT --- */
+.text-white-50 {
+    color: rgba(255, 255, 255, 0.7) !important;
+    font-size: 0.95rem;
+    line-height: 1.6;
+}
+
+/* --- HEADINGS --- */
+h5.text-white {
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    position: relative;
+    display: inline-block;
+    margin-bottom: 25px !important;
+}
+
+/* Heading Underline (Green/Gold) */
+h5.text-white::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -8px;
+    width: 40px;
+    height: 3px;
+    background-color: #072416; /* Healing Green */
+    border-radius: 2px;
+}
+
+/* --- LINKS LIST --- */
+.footer-links li {
+    margin-bottom: 12px;
+}
+
+.footer-links a {
+    color: rgba(255, 255, 255, 0.7);
+    text-decoration: none;
+    transition: all 0.3s ease;
+    font-size: 0.95rem;
+    display: inline-block;
+}
+
+/* Hover Effect */
+.footer-links a:hover {
+    color: #fff;
+    transform: translateX(5px); /* Slide Right */
+    color: #b32a2a; /* Gold Hover */
+}
+
+/* --- CONTACT INFO --- */
+.contact-info li {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 15px;
+    color: rgba(255, 255, 255, 0.8);
+}
+
+.contact-info i {
+    margin-top: 5px;
+    color: #c62020; /* Green Icons */
+    font-size: 1.1rem;
+}
+
+/* --- SOCIAL ICONS --- */
+.social-links a {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height: 40px;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 50%;
+    color: white;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    font-size: 1.2rem;
+}
+
+.social-links a:hover {
+    background-color: #b02626; /* Green BG on Hover */
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(25, 135, 84, 0.3);
+}
+
+/* --- MAP STYLING --- */
+.footer-map iframe {
+    border: 4px solid rgba(255, 255, 255, 0.1) !important;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+    transition: 0.3s;
+}
+
+.footer-map iframe:hover {
+    border-color:#b02626 !important;
+}
+
+/* --- COPYRIGHT BAR --- */
+.border-top {
+    border-color: rgba(255, 255, 255, 0.1) !important;
+}
+
+.text-primary {
+    color: #093715 !important; /* Gold for 'Designed by' */
+    font-weight: 700;
+}
+
+/* ========================
+   MOBILE RESPONSIVE
+   ======================== */
+@media (max-width: 768px) {
+    .footer-section {
+        padding: 60px 0 20px;
+        text-align: center; /* Mobile pe sab center */
+    }
+
+    /* Headings Center */
+    h5.text-white::after {
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    /* Contact Info Center */
+    .contact-info li {
+        justify-content: center;
+    }
+
+    /* Social Icons Center */
+    .social-links {
+        justify-content: center;
+        display: flex;
+        gap: 15px;
+    }
+    
+    /* Bottom Bar Stack */
+    .col-md-6.text-md-end {
+        text-align: center !important;
+        margin-top: 15px;
+    }
+}
+</style>
 <body>
 
     
@@ -1053,7 +1212,7 @@ body {
                 <!-- LEFT SIDE: TEXT CONTENT -->
                 <div class="col-lg-6 hero-text" data-aos="fade-right">
                     <span class="tagline">
-                        <i class="fa-solid fa-heart-pulse"></i> SUKOON REHABILITATION
+                        <i class="fa-solid fa-heart-pulse"></i> SAKOON REHABILITATION
                     </span>
                     
                     <h1>Your Journey to <br> <span class="highlight">Peace & Recovery</span> Starts Here</h1>
@@ -1370,7 +1529,7 @@ body {
             <div class="text-box">
                 <span class="sub-heading">Our Mission</span>
                 <h2>Journey to Recovery</h2>
-                <p>At Sukoon Rehabilitation, we don't just treat symptoms; we rebuild lives. Our holistic approach ensures that every individual finds their path back to a healthy, happy, and productive life.</p>
+                <p>At Sakoon Rehabilitation, we don't just treat symptoms; we rebuild lives. Our holistic approach ensures that every individual finds their path back to a healthy, happy, and productive life.</p>
                 
                 <div class="features-list">
                     <div class="f-item"><i class="fa-solid fa-check"></i> 24/7 Monitoring</div>
@@ -1406,7 +1565,7 @@ body {
         <!-- Heading -->
         <div class="text-center mb-5">
             <span class="section-subtitle">Our Environment</span>
-            <h2 class="section-title">Life at Sukoon</h2>
+            <h2 class="section-title">Life at Sakoon</h2>
             <p class="section-desc">Experience the comfortable, engaging, and healing atmosphere we provide.</p>
         </div>
 
@@ -1419,7 +1578,7 @@ body {
                 <div class="life-card">
                     <img src="./images/check1.jpg" alt="Hospital Location" class="life-img">
                     <div class="life-overlay">
-                        <h4>Sukoon Campus</h4>
+                        <h4>Sakoon Campus</h4>
                         <p>Peaceful Location</p>
                     </div>
                 </div>
@@ -1544,7 +1703,7 @@ body {
                     <div class="quote-box">
                         <i class="fa-solid fa-quote-left quote-icon"></i>
                         <p class="ceo-text">
-                            "At Sukoon Rehabilitation, we believe that recovery is not just about stopping an addiction, it's about building a new life. Our mission is to provide a safe, compassionate, and scientifically backed environment where individuals can heal mentally, physically, and emotionally. We are here to guide you from darkness into light."
+                            "At Sakoon Rehabilitation, we believe that recovery is not just about stopping an addiction, it's about building a new life. Our mission is to provide a safe, compassionate, and scientifically backed environment where individuals can heal mentally, physically, and emotionally. We are here to guide you from darkness into light."
                         </p>
                     </div>
 
@@ -1575,7 +1734,75 @@ body {
     </div>
 </section>
 
+<!--footerrrrrrrrr-->
+<footer class="footer-section">
+    <div class="container">
+        <div class="row">
+            <!-- Column 1: Logo & About -->
+            <div class="col-lg-4 col-md-6 mb-4">
+                <div class="footer-logo mb-3">
+                    <img src="./Images/logoo.png" alt="Sukoon Rehabilitation Logo" style="height: 60px;">
+                </div>
+                <p class="text-white-50">
+                    Sakoon Rehabilitation Center is dedicated to providing compassionate care for addiction recovery and mental health, helping individuals rebuild their lives with dignity and hope.
+                </p>
+                <div class="social-links mt-3">
+                    <a href="https://www.facebook.com/share/16in6jCAmi/?mibextid=wwXIfr" class="text-white me-3"><i class="fab fa-facebook-f"></i></a>
+                    
+                    <a href="https://www.tiktok.com/@sakoonrehab0?_r=1&_t=ZS-91wRI0O2Osa" class="text-white"><i class="fab fa-tiktok"></i></a>
+                </div>
+            </div>
 
+            <!-- Column 2: Quick Links -->
+            <div class="col-lg-2 col-md-6 mb-4">
+                <h5 class="text-white mb-3">Quick Links</h5>
+                <ul class="list-unstyled footer-links">
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#about">About Us</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#team">Our Team</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </div>
+
+            <!-- Column 3: Contact Info -->
+            <div class="col-lg-3 col-md-6 mb-4">
+                <h5 class="text-white mb-3">Contact Us</h5>
+                <ul class="list-unstyled text-white-50 contact-info">
+                    <li class="mb-2"><i class="fas fa-phone me-2 text-primary"></i> +92 309 9846835</li>
+                    <li class="mb-2"><i class="fas fa-phone me-2 text-primary"></i> +92 304 2403452</li>
+                    <li class="mb-2"><i class="fas fa-envelope me-2 text-primary"></i> sakoonrehab@gmail.com</li>
+                    <li><i class="fas fa-map-marker-alt me-2 text-primary"></i> New Multan Colony, Services Road House # 26-X, Near Shah Rukn-E-Alam Metro Station, Multan</li>
+                </ul>
+            </div>
+
+            <!-- Column 4: Map -->
+            <div class="col-lg-3 col-md-6 mb-4">
+                <h5 class="text-white mb-3">Find Us</h5>
+                <div class="footer-map">
+                    <iframe 
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d441430.9295084349!2d71.47356159999998!3d30.1891584!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x393b36839fb82987%3A0xc2a0878d3f1c3424!2sMetro%20Bus%20Station%2C%20Shah%20Rukne%20Alam!5e0!3m2!1sen!2s!4v1764870898314!5m2!1sen!2s" 
+                        width="100%" 
+                        height="200" 
+                        style="border:0; border-radius: 10px;" 
+                        allowfullscreen="" 
+                        loading="lazy" 
+                        referrerpolicy="no-referrer-when-downgrade">
+                    </iframe>
+                </div>
+            </div>
+        </div>
+        
+        <div class="row mt-4 pt-4 border-top border-secondary">
+            <div class="col-md-6 text-center text-md-start">
+                <p class="text-white-50 mb-0">&copy; 2025 Sakoon Rehabilitation. All Rights Reserved.</p>
+            </div>
+            <div class="col-md-6 text-center text-md-end">
+                <p class="text-white-50 mb-0">Designed by <a href="http://codedclouds.org"><span class="text-primary">CodedClouds</span></a></p>
+            </div>
+        </div>
+    </div>
+</footer>
 
 
 
