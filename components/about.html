@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - CodedClouds</title>
+    
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <!-- AOS Animation -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <!-- Main CSS -->
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+        /* --- ABOUT PAGE STYLES --- */
+        
+        /* Header (Cover) */
+        .about-header {
+            background: linear-gradient(rgba(17, 17, 58, 0.85), rgba(17, 17, 58, 0.4)), url('../images/cover.jpg');
+            background-size: cover;
+            background-position: center;
+            height: 50vh;
+            min-height: 400px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+            position: relative;
+            margin-bottom: 80px;
+        }
+
+        /* Back Button */
+        .btn-back-home {
+            position: absolute;
+            top: 30px; left: 30px;
+            text-decoration: none;
+            color: white;
+            font-weight: 600;
+            border: 1px solid rgba(255,255,255,0.3);
+            padding: 10px 20px;
+            border-radius: 50px;
+            background: rgba(255,255,255,0.1);
+            backdrop-filter: blur(5px);
+            transition: 0.3s;
+            font-size: 14px;
+        }
+        .btn-back-home:hover { background: white; color: rgb(17, 17, 58); }
+
+        /* Content Sections */
+        .story-section { padding-bottom: 100px; }
+        
+        .story-heading {
+            font-size: 2rem;
+            font-weight: 800;
+            color: rgb(17, 17, 58);
+            margin-bottom: 20px;
+            position: relative;
+            display: inline-block;
+        }
+        .story-heading::after {
+            content: ''; display: block; width: 60px; height: 4px;
+            background: var(--primary, #0a870e); margin-top: 10px;
+        }
+
+        .story-text {
+            font-size: 1.05rem;
+            line-height: 1.8;
+            color: #555;
+            margin-bottom: 20px;
+            text-align: justify;
+        }
+
+        /* Image Styling (Rounded & Shadow) */
+        .about-img {
+            border-radius: 20px;
+            box-shadow: 0 20px 50px rgba(0,0,0,0.15);
+            width: 100%;
+            object-fit: cover;
+            transition: transform 0.3s;
+        }
+        .about-img:hover { transform: scale(1.02); }
+
+        /* Quote Box */
+        .quote-box {
+            background: #f8f9fa;
+            border-left: 5px solid var(--primary, #0a3a87);
+            padding: 30px;
+            margin: 40px 0;
+            border-radius: 0 15px 15px 0;
+        }
+        .quote-box p {
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: rgb(17, 17, 58);
+            font-style: italic;
+            margin: 0;
+        }
+
+        /* Mission Cards */
+        .mission-card {
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+            text-align: center;
+            border-bottom: 4px solid transparent;
+            transition: 0.3s;
+            height: 100%;
+        }
+        .mission-card:hover {
+            transform: translateY(-10px);
+            border-bottom-color: var(--primary, #0a3a87);
+        }
+        .mission-icon {
+            font-size: 2rem;
+            color: var(--primary, #0a3a87);
+            margin-bottom: 15px;
+        }
+
+        /* Mobile */
+        @media (max-width: 768px) {
+            .about-header h1 { font-size: 2.2rem; }
+            .btn-back-home { top: 20px; left: 20px; padding: 8px 15px; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- HEADER / COVER -->
+    <header class="about-header">
+        <a href="../index.html" class="btn-back-home">
+            <i class="fa-solid fa-arrow-left me-2"></i> Back to Home
+        </a>
+        <div class="container" data-aos="fade-up">
+            <span class="badge bg-success px-3 py-2 mb-3 rounded-pill fw-bold shadow-sm">OUR JOURNEY</span>
+            <h1 class="display-4 fw-bold">Why We Started</h1>
+            <p class="lead mt-3 text-light opacity-75">From a frustration to a revolution.</p>
+        </div>
+    </header>
+
+    <!-- STORY CONTENT -->
+    <section class="story-section">
+        <div class="container">
+            
+            <!-- PART 1: THE PROBLEM (Image Left) -->
+            <div class="row align-items-center mb-5">
+                <div class="col-lg-6 mb-4 mb-lg-0" data-aos="fade-right">
+                    <!-- Image 1 (Office/Laptop) -->
+                    <img src="../images/ab1.jpg" alt="Working Late" class="about-img" style="height: 400px;">
+                </div>
+                <div class="col-lg-6 ps-lg-5" data-aos="fade-left">
+                    <h2 class="story-heading">Not Born From Profit</h2>
+                    <p class="story-text">
+                        Five years ago, Coded Clouds didn’t start as a company — it started as a frustration. Muhammad Hashim was staring at the same problem every small business in Pakistan complained about: the undocumented economy, the cash-only chaos, the “bhai, likh diya hai” style bookkeeping that kept half the country invisible.
+                    </p>
+                    <p class="story-text">
+                        He wasn’t a giant corporation, he wasn’t backed by investors — just one young guy with a laptop, a vision, and that stubborn <strong>“I’m gonna fix this someday”</strong> energy.
+                    </p>
+                </div>
+            </div>
+
+            <!-- QUOTE BLOCK -->
+            <div class="row justify-content-center" data-aos="zoom-in">
+                <div class="col-lg-10">
+                    <div class="quote-box">
+                        <i class="fa-solid fa-quote-left text-success fs-3 mb-3"></i>
+                        <p>“If hospitals are investing in management systems, why are patients still struggling with inefficiencies? We realized they didn't need another software; they needed a streamlined experience.”</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- PART 2: THE SOLUTION (Image Right) -->
+            <div class="row align-items-center mb-5 mt-5">
+                <div class="col-lg-6 order-lg-2 mb-4 mb-lg-0" data-aos="fade-left">
+                    <!-- Image 2 (Team/Meeting) -->
+                    <img src="../images/ab.jpg" alt="Team Discussion" class="about-img" style="height: 400px;">
+                </div>
+                <div class="col-lg-6 order-lg-1 pe-lg-5" data-aos="fade-right">
+                    <h2 class="story-heading">Building The Foundation</h2>
+                    <p class="story-text">
+                        So he built Coded Clouds. Not to chase hype. Not to become another copy-paste software house. The mission was simple: earn enough capital, skills, and team strength to eventually launch Pakistan’s first real fintech solution tailored for small businesses.
+                    </p>
+                    <p class="story-text">
+                        Every client wasn’t just a project — it was another brick in the foundation. Every late night, every deployment was part of a bigger plan: use software services to fund a solution that fixes the financial blind spot of an entire nation.
+                    </p>
+                </div>
+            </div>
+
+            <!-- PART 3: THE MISSION (Cards) -->
+            <div class="row g-4 mt-5">
+                <div class="col-12 text-center mb-4">
+                    <h2 class="fw-bold text-dark">Our Mission</h2>
+                </div>
+                <div class="col-md-4" data-aos="fade-up" data-aos-delay="100">
+                    <div class="mission-card">
+                        <i class="fa-solid fa-eye mission-icon"></i>
+                        <h5>Make Business Visible</h5>
+                        <p class="text-muted small">Empowering the undocumented economy through digital tools.</p>
+                    </div>
+                </div>
+                <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
+                    <div class="mission-card">
+                        <i class="fa-solid fa-hand-holding-dollar mission-icon"></i>
+                        <h5>Accessible Fintech</h5>
+                        <p class="text-muted small">Bringing financial solutions to every corner store and freelancer.</p>
+                    </div>
+                </div>
+                <div class="col-md-4" data-aos="fade-up" data-aos-delay="300">
+                    <div class="mission-card">
+                        <i class="fa-solid fa-rocket mission-icon"></i>
+                        <h5>Future Innovation</h5>
+                        <p class="text-muted small">This is just the warm-up before the real product drops.</p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- FOOTER (Simple) -->
+    <footer class="bg-dark text-white text-center py-4">
+        <p class="m-0">&copy; 2025 sakoonrehab. All Rights Reserved.</p>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script> AOS.init({ once: true }); </script>
+</body>
+</html>
