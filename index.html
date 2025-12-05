@@ -79,7 +79,7 @@ body {
     color: var(--primary);
 }
 /* ========================
-   HERO SECTION
+   HERO SECTION (5-POINT ROTATION)
    ======================== */
 .hero-section {
     padding-top: 120px;
@@ -92,9 +92,9 @@ body {
     position: relative;
 }
 
-/* --- LEFT TEXT --- */
+/* --- LEFT TEXT STYLING --- */
 .tagline {
-    color: var(--accent); /* Red */
+    color: var(--accent);
     font-weight: 700;
     text-transform: uppercase;
     letter-spacing: 2px;
@@ -117,355 +117,179 @@ body {
     margin-bottom: 20px;
 }
 
-.highlight {
-    color: var(--primary);
-    position: relative;
-    display: inline-block;
-}
-
+.highlight { color: var(--primary); position: relative; display: inline-block; }
 .highlight::after {
-    content: '';
-    position: absolute;
-    bottom: 8px;
-    left: 0;
-    width: 100%;
-    height: 12px;
-    background: rgba(25, 135, 84, 0.2); /* Green Highlight */
-    z-index: -1;
-    border-radius: 5px;
+    content: ''; position: absolute; bottom: 8px; left: 0; width: 100%; height: 12px;
+    background: rgba(25, 135, 84, 0.2); z-index: -1; border-radius: 5px;
 }
 
-.hero-text p {
-    font-size: 1.1rem;
-    color: #555;
-    margin-bottom: 35px;
-    max-width: 500px;
-    line-height: 1.6;
-}
+.hero-text p { font-size: 1.1rem; color: #555; margin-bottom: 35px; max-width: 500px; line-height: 1.6; }
 
 /* Buttons */
-.hero-btns {
-    display: flex;
-    gap: 15px;
-}
-
+.hero-btns { display: flex; gap: 15px; }
 .btn-primary-hero {
-    background: var(--primary);
-    color: white;
-    padding: 14px 35px;
-    border-radius: 50px;
-    font-weight: 600;
-    text-decoration: none;
-    transition: 0.3s;
-    box-shadow: 0 10px 20px rgba(13, 110, 253, 0.3);
+    background: var(--primary); color: white; padding: 14px 35px; border-radius: 50px; font-weight: 600; text-decoration: none; transition: 0.3s; box-shadow: 0 10px 20px rgba(13, 110, 253, 0.3);
 }
-
 .btn-secondary-hero {
-    background: transparent;
-    color: var(--dark);
-    border: 2px solid var(--dark);
-    padding: 12px 30px;
-    border-radius: 50px;
-    font-weight: 600;
-    text-decoration: none;
-    transition: 0.3s;
-    display: flex;
-    align-items: center;
-    gap: 8px;
+    background: transparent; color: var(--dark); border: 2px solid var(--dark); padding: 12px 30px; border-radius: 50px; font-weight: 600; text-decoration: none; transition: 0.3s; display: flex; align-items: center; gap: 8px;
 }
-
-.btn-primary-hero:hover { background: var(--dark); transform: translateY(-3px); color: white;}
+.btn-primary-hero:hover { background: var(--dark); transform: translateY(-3px); color: white; }
 .btn-secondary-hero:hover { background: var(--dark); color: white; }
 
-/* Trust Badges */
-.trust-badges {
-    display: flex;
-    align-items: center;
-    gap: 30px;
-}
-
-.badge-item {
-    display: flex;
-    align-items: center;
-    gap: 15px;
-}
-
-.badge-item i {
-    font-size: 2rem;
-    color: var(--healing); /* Green Icon */
-}
-
+/* Badges */
+.trust-badges { display: flex; align-items: center; gap: 30px; }
+.badge-item { display: flex; align-items: center; gap: 15px; }
+.badge-item i { font-size: 2rem; color: var(--healing); }
 .badge-item h5 { font-size: 1rem; font-weight: 700; margin: 0; color: var(--dark); }
 .badge-item small { font-size: 0.85rem; color: #666; }
-
 .divider { width: 1px; height: 40px; background: #ccc; }
 
+
 /* ========================
-   RIGHT SIDE: CREATIVE COMPOSITION
+   RIGHT SIDE: 5-POINT ROTATION
    ======================== */
 .hero-visual {
-    position: relative;
     height: 500px;
     display: flex;
     justify-content: center;
     align-items: center;
-}
-
-.image-composition {
     position: relative;
-    width: 100%;
-    max-width: 500px;
-    height: 500px;
 }
 
-/* Main Image */
-.main-img-box {
+/* Watermark */
+.watermark-bg {
     position: absolute;
-    top: 0; right: 0;
-    width: 80%;
-    height: 85%;
-    border-radius: 30px;
-    overflow: hidden;
+    top: 50%; left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 0;
+    opacity: 0.05;
+    pointer-events: none;
+}
+.watermark-bg img { width: 450px; height: auto; filter: grayscale(100%); }
+
+/* Orbit Container */
+.orbit-container {
+    position: relative;
+    width: 450px;
+    height: 450px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     z-index: 2;
-    border: 8px solid white;
-    box-shadow: 0 20px 50px rgba(0,0,0,0.15);
 }
 
-.main-img { width: 100%; height: 100%; object-fit: cover; }
-
-/* Small Floating Image */
-.sub-img-box {
+/* Center Hub (Image) */
+.center-hub {
     position: absolute;
-    bottom: 20px; left: 0;
-    width: 45%;
-    height: 40%;
-    border-radius: 20px;
-    overflow: hidden;
-    z-index: 3;
-    border: 6px solid white;
-    box-shadow: 0 15px 40px rgba(0,0,0,0.2);
-    animation: floatSub 6s ease-in-out infinite;
-}
-
-.sub-img { width: 100%; height: 100%; object-fit: cover; }
-
-/* Decoration */
-.circle-decoration {
-    position: absolute;
-    top: -30px; right: -30px;
-    width: 150px; height: 150px;
-    border: 15px solid var(--healing); /* Green Ring */
-    border-radius: 50%;
-    z-index: 1;
-    opacity: 0.2;
-}
-
-.dots-pattern {
-    position: absolute;
-    bottom: -20px; right: 50px;
     width: 100px; height: 100px;
-    background-image: radial-gradient(var(--primary) 2px, transparent 2px);
-    background-size: 10px 10px;
-    z-index: 1;
-    opacity: 0.5;
-}
-
-/* Floating Card */
-.info-card {
-    position: absolute;
-    top: 50%; left: -20px;
-    background: white;
-    padding: 12px 20px;
-    border-radius: 10px;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    z-index: 4;
-    font-weight: 700;
-    font-size: 0.9rem;
-    color: var(--dark);
-    animation: floatCard 5s ease-in-out infinite;
-}
-
-/* Animations */
-@keyframes floatSub {
-    0%, 100% { transform: translateY(0); }
-    50% { transform: translateY(-15px); }
-}
-
-@keyframes floatCard {
-    0%, 100% { transform: translateY(0); }
-    50% { transform: translateY(10px); }
-}
-
-/* ========================
-   MOBILE RESPONSIVE
-   ======================== */
-@media (max-width: 991px) {
-    .hero-section {
-        padding-top: 100px;
-        text-align: center;
-        height: auto;
-    }
-    
-    .tagline { margin: 0 auto 15px; }
-    .hero-text h1 { font-size: 2.5rem; }
-    .hero-subtext { margin: 0 auto 30px; }
-    
-    .hero-btns { 
-        justify-content: center; 
-        flex-direction: column;
-        gap: 15px;
-    }
-    
-    .trust-badges { 
-        justify-content: center; 
-        margin-top: 30px;
-    }
-
-    /* Image Adjustments */
-    .hero-visual {
-        margin-top: 50px;
-        height: 400px;
-    }
-
-    .main-img-box { width: 70%; right: 15%; }
-    .sub-img-box { width: 40%; left: 5%; bottom: 0; }
-    .info-card { left: 5%; }
-}
-/* ========================
-   NEW HERO VISUAL (ANIMATED)
-   ======================== */
-.hero-visual {
-    height: 500px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: relative;
-    overflow: hidden; /* Taake blobs bahar na niklein */
-}
-
-.healing-animation-container {
-    position: relative;
-    width: 100%;
-    height: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-/* --- ANIMATED BLOBS --- */
-.blob {
-    position: absolute;
+    background: none;
     border-radius: 50%;
-    filter: blur(40px);
-    opacity: 0.4;
-    animation: move-and-morph 15s infinite alternate ease-in-out;
+    display: flex; justify-content: center; align-items: center;
+    z-index: 5; 
+    box-shadow: 0 0 30px rgba(13, 110, 253, 0.2);
+    padding: 5px; /* Padding taake image border se door rahay */
+    overflow: hidden;
 }
 
-.blob-1 {
-    width: 300px; height: 300px;
-    background: var(--primary); /* Blue */
-    top: 10%; left: 10%;
-    animation-delay: 0s;
+.hub-img { width: 100%; height: 100%; object-fit: contain; display: block; border-radius: 50%; }
+
+/* Track */
+.orbit-track {
+    position: absolute;
+    width: 100%; height: 100%;
+    border-radius: 50%; 
+    animation: rotateCircle 30s linear infinite;
 }
 
-.blob-2 {
-    width: 250px; height: 250px;
-    background: var(--healing); /* Green */
-    bottom: 20%; right: 10%;
-    animation-delay: -5s;
-}
-
-.blob-3 {
-    width: 200px; height: 200px;
-    background: var(--accent); /* Red */
-    bottom: 10%; left: 30%;
-    animation-delay: -10s;
-    opacity: 0.3;
-}
-
-@keyframes move-and-morph {
-    0% {
-        border-radius: 50%;
-        transform: translate(0, 0) scale(1);
-    }
-    33% {
-        border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
-        transform: translate(30px, -20px) scale(1.1);
-    }
-    66% {
-        border-radius: 40% 60% 70% 30% / 40% 50% 60% 50%;
-        transform: translate(-20px, 30px) scale(0.9);
-    }
-    100% {
-        border-radius: 50%;
-        transform: translate(0, 0) scale(1);
-    }
-}
-
-/* --- CENTRAL ICON --- */
-.center-icon-container {
-    position: relative;
-    z-index: 5;
+/* Items */
+.orbit-item {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
     width: 120px;
-    height: 120px;
-    background: white;
+    transform: translate(-50%, -50%); /* Center on point */
+    animation: counterRotate 30s linear infinite;
+}
+
+/* --- PERFECT PENTAGON POSITIONS (5 POINTS) --- */
+/* 1. Top (0 deg) */
+.item-1 { top: 0%; left: 50%; }
+
+/* 2. Top Right (72 deg) */
+.item-2 { top: 35%; left: 98%; }
+
+/* 3. Bottom Right (144 deg) */
+.item-3 { top: 90%; left: 80%; }
+
+/* 4. Bottom Left (216 deg) */
+.item-4 { top: 90%; left: 20%; }
+
+/* 5. Top Left (288 deg) */
+.item-5 { top: 35%; left: 2%; }
+
+
+/* Icons */
+.icon-circle {
+    width: 55px; height: 55px;
+    background: none;
+    border: 2px solid var(--primary);
     border-radius: 50%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-    font-size: 3rem;
+    display: flex; justify-content: center; align-items: center;
     color: var(--primary);
-    border: 4px solid rgba(255,255,255,0.5);
-    animation: float-center 6s ease-in-out infinite;
+    font-size: 22px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    margin-bottom: 5px;
+    transition: 0.3s;
 }
 
-@keyframes float-center {
-    0%, 100% { transform: translateY(0); }
-    50% { transform: translateY(-10px); }
+.orbit-item span {
+    font-size: 12px; font-weight: 700; color: var(--dark);
+    background: rgba(255, 255, 255, 0.95);
+    padding: 4px 10px; border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    border: 1px solid #eee; white-space: nowrap;
 }
 
-/* --- FLOATING ELEMENTS --- */
-.floating-element {
-    position: absolute;
-    background: rgba(255, 255, 255, 0.9);
-    padding: 8px 15px;
-    border-radius: 30px;
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
-    font-weight: 600;
-    font-size: 0.9rem;
-    color: var(--dark);
-    z-index: 6;
-    animation: float-element 8s ease-in-out infinite;
+/* Hover Logic */
+.orbit-container:hover .orbit-track,
+.orbit-container:hover .orbit-item { animation-play-state: paused; }
+
+.orbit-item:hover .icon-circle {
+    background: var(--healing); /* Green Hover */
+    color: white; border-color: var(--healing); transform: scale(1.1);
 }
 
-.floating-element i { font-size: 1.1rem; }
-
-.elem-1 { top: 25%; right: 20%; animation-delay: 1s; }
-.elem-2 { bottom: 30%; left: 15%; animation-delay: 2s; }
-
-@keyframes float-element {
-    0%, 100% { transform: translate(0, 0); }
-    50% { transform: translate(10px, -15px); }
-}
+/* Animation Keyframes */
+@keyframes rotateCircle { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
+@keyframes counterRotate { from { transform: translate(-50%, -50%) rotate(0deg); } to { transform: translate(-50%, -50%) rotate(-360deg); } }
 
 /* ========================
    MOBILE RESPONSIVE
    ======================== */
 @media (max-width: 991px) {
-    .hero-visual {
-        height: 400px;
-        margin-top: 50px;
-    }
-    .blob-1 { width: 200px; height: 200px; }
-    .blob-2 { width: 180px; height: 180px; }
-    .blob-3 { width: 150px; height: 150px; }
+    .hero-section { padding-top: 100px; text-align: center; height: auto; }
+    .hero-row { flex-direction: column; }
+    .hero-text h1 { font-size: 2.5rem; }
+    .tagline { margin: 0 auto 20px; }
+    .hero-btns, .trust-badges { justify-content: center; }
+    
+    .hero-visual { height: 400px; margin-top: 50px; width: 100%; overflow: hidden; }
+    
+    .orbit-container { width: 290px; height: 290px; }
+    .watermark-bg img { width: 260px; }
+    .center-hub { width: 80px; height: 80px; }
+    
+    .icon-circle { width: 40px; height: 40px; font-size: 16px; }
+    .orbit-item span { font-size: 10px; padding: 2px 6px; }
+    
+    /* Mobile Positions (Adjusted for smaller circle) */
+    .item-1 { top: -15px; left: 50%; }
+    .item-2 { top: 30%; left: 95%; }
+    .item-3 { top: 90%; left: 80%; }
+    .item-4 { top: 90%; left: 20%; }
+    .item-5 { top: 30%; left: 5%; }
 }
 </style>
 <!--drugssssssssss-->
@@ -541,7 +365,7 @@ body {
         opacity: 0;
         transition: 0.5s ease;
         z-index: 3;
-        color: white;
+        color: rgb(255, 255, 255);
         pointer-events: none;
     }
 
@@ -628,7 +452,7 @@ body {
     /* Back Side (Info - Rotated) */
     .card-back {
         background-color: var(--secondary); /* Green BG */
-        color: white;
+        color: rgb(0, 0, 0);
         transform: rotateY(180deg); /* Pehle se ulta rakho */
         display: flex;
         flex-direction: column;
@@ -1361,74 +1185,103 @@ h5.text-white::after {
     </nav>
 
     
-    <header class="hero-section">
-        <div class="container h-100">
-            <div class="row h-100 align-items-center hero-row">
-    
-    <!-- LEFT SIDE: TEXT CONTENT (Same as before) -->
-    <div class="col-lg-6 hero-text" data-aos="fade-right">
-        <span class="tagline">
-            <i class="fa-solid fa-heart-pulse"></i> SAKOON REHABILITATION
-        </span>
-        
-        <h1>Your Journey to <br> <span class="highlight">Peace & Recovery</span> Starts Here</h1>
-        
-        <p>We provide world-class addiction treatment and psychiatric care in a safe, supportive environment. Reclaim your life with our expert team.</p>
-        
-        <div class="hero-btns">
-            <a href="#contact" class="btn-primary-hero">Get Help Now <i class="fa-solid fa-arrow-right ms-2"></i></a>
-            <a href="#video-scroll" class="btn-secondary-hero"><i class="fa-solid fa-circle-play"></i> How We Work</a>
-        </div>
+    <!-- HERO SECTION -->
+<header class="hero-section">
+    <div class="container h-100">
+        <div class="row h-100 align-items-center hero-row">
+            
+            <!-- LEFT SIDE: TEXT CONTENT -->
+            <div class="col-lg-6 hero-text" data-aos="fade-right">
+                <span class="tagline">
+                    <i class="fa-solid fa-heart-pulse"></i> SUKOON REHABILITATION
+                </span>
+                
+                <h1>A Journey to <br> <span class="highlight">Peace & Recovery</span> Starts Here</h1>
+                
+                <p>We provide world-class addiction treatment and psychiatric care in a safe, supportive environment. Reclaim your life with our expert team.</p>
+                
+                <div class="hero-btns">
+                    <a href="#contact" class="btn-primary-hero">Get Help Now <i class="fa-solid fa-arrow-right ms-2"></i></a>
+                    <a href="#services" class="btn-secondary-hero"><i class="fa-solid fa-circle-play"></i> How We Work</a>
+                </div>
 
-        <!-- Trust Badges -->
-        <div class="trust-badges mt-5">
-            <div class="badge-item">
-                <i class="fa-solid fa-user-doctor"></i>
-                <div>
-                    <h5>Expert Doctors</h5>
-                    <small>24/7 Available</small>
+                <!-- Trust Badges -->
+                <div class="trust-badges mt-5">
+                    <div class="badge-item">
+                        <i class="fa-solid fa-user-doctor"></i>
+                        <div>
+                            <h5>Expert Doctors</h5>
+                            <small>24/7 Available</small>
+                        </div>
+                    </div>
+                    <div class="divider"></div>
+                    <div class="badge-item">
+                        <i class="fa-solid fa-shield-heart"></i>
+                        <div>
+                            <h5>100% Private</h5>
+                            <small>Confidential Care</small>
+                        </div>
+                    </div>
                 </div>
             </div>
-            <div class="divider"></div>
-            <div class="badge-item">
-                <i class="fa-solid fa-shield-heart"></i>
-                <div>
-                    <h5>100% Private</h5>
-                    <small>Confidential Care</small>
+
+            <!-- RIGHT SIDE: 5-POINT ROTATION -->
+            <div class="col-lg-6 hero-visual position-relative" data-aos="fade-left">
+                
+                <!-- Watermark Background -->
+                <div class="watermark-bg">
+                    <img src="./images/logoo.png" alt="Watermark">
                 </div>
+
+                <!-- Rotation Container -->
+                <div class="orbit-container">
+                    
+                    <!-- Center Hub (Logo/Icon) -->
+                    <div class="center-hub">
+                        <img src="./images/logoo.png" alt="Center Pic" class="hub-img">
+                    </div>
+
+                    <!-- Rotating Track -->
+                    <div class="orbit-track">
+                        
+                        <!-- 1. Detox (Top) -->
+                        <div class="orbit-item item-1">
+                            <div class="icon-circle"><i class="fa-solid fa-droplet-slash"></i></div>
+                            <span>Detoxification</span>
+                        </div>
+
+                        <!-- 2. Therapy (Top Right) -->
+                        <div class="orbit-item item-2">
+                            <div class="icon-circle"><i class="fa-solid fa-comments"></i></div>
+                            <span>Therapy Sessions</span>
+                        </div>
+
+                        <!-- 3. Rehab (Bottom Right) -->
+                        <div class="orbit-item item-3">
+                            <div class="icon-circle"><i class="fa-solid fa-person-walking-arrow-right"></i></div>
+                            <span>Rehabilitation</span>
+                        </div>
+
+                        <!-- 4. Aftercare (Bottom Left) -->
+                        <div class="orbit-item item-4">
+                            <div class="icon-circle"><i class="fa-solid fa-house-chimney-user"></i></div>
+                            <span>Aftercare Support</span>
+                        </div>
+
+                        <!-- 5. Psychiatry (Top Left) -->
+                        <div class="orbit-item item-5">
+                            <div class="icon-circle"><i class="fa-solid fa-brain"></i></div>
+                            <span>Psychiatry</span>
+                        </div>
+
+                    </div>
+                </div>
+
             </div>
+
         </div>
     </div>
-
-    <!-- RIGHT SIDE: NEW ANIMATED VISUAL (No Static Pics) -->
-    <div class="col-lg-6 hero-visual" data-aos="fade-left">
-        <div class="healing-animation-container">
-            <!-- Animated Blobs -->
-            <div class="blob blob-1"></div>
-            <div class="blob blob-2"></div>
-            <div class="blob blob-3"></div>
-            
-            <!-- Central Icon/Logo Idea -->
-            <div class="center-icon-container">
-                <i class="fa-solid fa-hands-holding-child"></i>
-            </div>
-
-            <!-- Floating Elements -->
-            <div class="floating-element elem-1">
-                <i class="fa-solid fa-leaf text-success"></i>
-                <span>Growth</span>
-            </div>
-            <div class="floating-element elem-2">
-                <i class="fa-solid fa-dove text-primary"></i>
-                <span>Peace</span>
-            </div>
-            
-        </div>
-    </div>
-
-</div>
-        </div>
-    </header>
+</header>
 
     <!--drugsss-->
      
@@ -1508,7 +1361,7 @@ h5.text-white::after {
             <!-- 5. Cocaine -->
             <div class="drug-card" onclick="flipCard(this)">
                 <div class="card-inner">
-                    <div class="card-front" style="background-image: url('https://images.unsplash.com/photo-1606166410292-0b445e994e43?q=80&w=800&auto=format&fit=crop');">
+                    <div class="card-front" style="background-image: url('./images/coc.png');">
                         <div class="drug-overlay"></div>
                         <h3>Cocaine</h3>
                     </div>
@@ -1553,7 +1406,7 @@ h5.text-white::after {
             <!-- 8. MDMA -->
             <div class="drug-card" onclick="flipCard(this)">
                 <div class="card-inner">
-                    <div class="card-front" style="background-image: url('https://images.unsplash.com/photo-1599409636242-758c95c4f5f6?q=80&w=800&auto=format&fit=crop');">
+                    <div class="card-front" style="background-image: url('./images/MDMA.png');">
                         <div class="drug-overlay"></div>
                         <h3>MDMA</h3>
                     </div>
@@ -1708,7 +1561,7 @@ h5.text-white::after {
             <div class="text-box">
                 <span class="sub-heading">Our Mission</span>
                 <h2>Journey to Recovery</h2>
-                <p>At Sakoon Rehabilitation, we don't just treat symptoms; we rebuild lives. Our holistic approach ensures that every individual finds their path back to a healthy, happy, and productive life.</p>
+                <p>At Sakoon Rehabilitation,, we don't just heal bodies; we restore hope. Our comprehensive approach empowers individuals to overcome challenges and thrive, leading to a more fulfilling life.</p>
                 
                 <div class="features-list">
                     <div class="f-item"><i class="fa-solid fa-check"></i> 24/7 Monitoring</div>
