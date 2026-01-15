@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sakoon Rehabilitation Center</title>
+    <title>Rooh Rehabilitation Center</title>
     <link rel="icon" type="image/png" href="./images/logoo.png">
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -19,14 +19,24 @@
 <style>
     
 /* ========================
-   SUKOON THEME COLORS
+   Rooh THEME COLORS
    ======================== */
 :root {
-    --primary: #0d6efd;     /* Blue (Trust) */
-    --accent: #dc3545;      /* Red (Urgency/Care) */
-    --healing: #198754;     /* Green (Nature/Health) */
-    --dark: #0b2545;        /* Deep Navy Text */
-    --light: #f0f4f8;       /* Soft Blue-Grey BG */
+    /* Primary (Blue ki jagah ab Gold ayega) */
+    --primary: #D4AF37;     /* Luxury Gold - Buttons aur Headings k liye */
+
+    /* Accent (Red ki jagah ab Bright Gold/White ayega) */
+    --accent: #ffffff;      /* White - Text parhne k liye */
+
+    /* Healing (Green ki jagah ab Dark Grey ayega Card BG k liye) */
+    --healing: #1a1a1a;     /* Dark Grey - Cards ya Sections k background k liye */
+
+    /* Dark (Navy ki jagah ab Pure Black) */
+    --dark: #000000;        /* Pitch Black - Main Background k liye */
+
+    /* Light (Blue-Grey ki jagah ab thora sa soft Black) */
+    --light: #2c2c2c;       /* Charcoal - Footer ya Borders k liye */
+
     --font: 'Poppins', sans-serif;
 }
 
@@ -40,10 +50,11 @@ body {
    NAVBAR
    ======================== */
 .custom-navbar {
-    background: rgba(255, 255, 255, 0.95);
+    background: rgba(0, 0, 0, 0.95);
     backdrop-filter: blur(10px);
     padding: 15px 0;
-    box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+     color: white;
+    box-shadow: 0 4px 20px var(--primary);
 }
 
 .logo-img {
@@ -52,7 +63,7 @@ body {
 }
 
 .nav-link {
-    color: var(--dark);
+    color: var(--accent);
     font-weight: 600;
     font-size: 15px;
     transition: 0.3s;
@@ -75,7 +86,7 @@ body {
 
 .btn-sukoon:hover {
     background: var(--dark);
-    color: rgb(34, 70, 188);
+    color: var(--primary);
     transform: translateY(-2px);
 }
 #book:hover{
@@ -106,7 +117,7 @@ body {
     align-items: center;
     gap: 10px;
     margin-bottom: 20px;
-    background: rgba(220, 53, 69, 0.1);
+    background: #d4af3760;
     padding: 5px 15px;
     border-radius: 30px;
     width: fit-content;
@@ -189,7 +200,7 @@ body {
     border-radius: 50%;
     display: flex; justify-content: center; align-items: center;
     z-index: 5; 
-    box-shadow: 0 0 30px rgba(13, 110, 253, 0.2);
+    box-shadow: 0 0 30px var(--primary);
     padding: 5px; /* Padding taake image border se door rahay */
     overflow: hidden;
 }
@@ -310,7 +321,7 @@ body {
     border-radius: 50%;
     text-align: center;
     font-size: 32px;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+    box-shadow: 0 4px 15px var(--primary);
     z-index: 9999; /* Sabse upar rahega */
     display: flex;
     align-items: center;
@@ -435,7 +446,7 @@ body {
     /* Overlay */
     .drug-overlay {
         position: absolute; top: 0; left: 0; width: 100%; height: 100%;
-        background: linear-gradient(to top, rgba(2, 12, 49, 0.95), transparent);
+        background: linear-gradient(to top, #d4af37af, transparent);
     }
     
     /* Desktop par Back side k elements ko adjust karna */
@@ -501,7 +512,7 @@ body {
         position: absolute;
         bottom: 10px; left: 0; right: 0;
         font-size: 1rem;
-        background: rgba(4, 49, 2, 0.8);
+        background: rgba(162, 152, 8, 0.8);
         padding: 5px;
         margin: 0;
         text-transform: uppercase;
@@ -536,7 +547,7 @@ body {
         display: flex; align-items: center; gap: 5px;
     }
     
-    .card-back i { color: #ff6b6b; font-size: 0.9rem; }
+    .card-back i { color: var(--primary); font-size: 0.9rem; }
     
     .drug-overlay { display: none; } /* Mobile flip pe overlay nahi chahiye */
 }
@@ -674,7 +685,7 @@ body {
 <!--LIFeeeeeeeeee-->
 <style>
 /* ========================
-   LIFE AT SUKOON SECTION
+   LIFE AT rooh SECTION
    ======================== */
 .life-at-sukoon-section {
     padding: 80px 0;
@@ -711,7 +722,7 @@ body {
     width: 100%;
     height: 100%;
     /* Green to Transparent Gradient */
-    background: linear-gradient(to top, rgba(25, 135, 84, 0.95) 20%, rgba(25, 135, 84, 0.7) 60%, transparent 100%);
+    background: linear-gradient(to top, #d4af3770 20%, #d4af3770 60%, transparent 100%);
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
@@ -1056,12 +1067,12 @@ body {
 <!--footerrrrr-->
 <style> 
 .footer-section {
-    background-color:#0d6efd; /* Deep Dark Green Background (Theme Match) */
+    background-color:#000000; /* Deep Dark Green Background (Theme Match) */
     padding: 80px 0 30px;
     color: white;
     font-family: 'Poppins', sans-serif;
     position: relative;
-    border-top: 5px solid #13275f; /* Gold Top Border (Optional) */
+    border-top: 5px solid #D4AF37; /* Gold Top Border (Optional) */
 }
 
 /* --- LOGO --- */
@@ -1098,7 +1109,7 @@ h5.text-white::after {
     bottom: -8px;
     width: 40px;
     height: 3px;
-    background-color: #072416; /* Healing Green */
+    background-color: var(--primary); /* Healing Green */
     border-radius: 2px;
 }
 
@@ -1152,9 +1163,9 @@ h5.text-white::after {
 }
 
 .social-links a:hover {
-    background-color: #b02626; /* Green BG on Hover */
+    background-color:var(--primary); /* Green BG on Hover */
     transform: translateY(-5px);
-    box-shadow: 0 5px 15px rgba(25, 135, 84, 0.3);
+    box-shadow: 0 5px 15px rgba(199, 218, 25, 0.3);
 }
 
 /* --- MAP STYLING --- */
@@ -1165,7 +1176,7 @@ h5.text-white::after {
 }
 
 .footer-map iframe:hover {
-    border-color:#b02626 !important;
+    border-color:#b09226 !important;
 }
 
 /* --- COPYRIGHT BAR --- */
@@ -1174,7 +1185,7 @@ h5.text-white::after {
 }
 
 .text-primary {
-    color: #093715 !important; /* Gold for 'Designed by' */
+    color:var(--primary) !important; /* Gold for 'Designed by' */
     font-weight: 700;
 }
 
@@ -1218,7 +1229,7 @@ h5.text-white::after {
         <div class="container">
             <!-- Logo -->
             <a class="navbar-brand logo-wrapper" href="#">
-                <img src="./images/logoo.png" alt="Sukoon Logo" class="logo-img">
+                <img src="./pics/logoo.png" alt="Rooh Logo" class="logo-img">
             </a>
 
             <!-- Mobile Toggle -->
@@ -1229,9 +1240,9 @@ h5.text-white::after {
             <!-- Links -->
             <div class="collapse navbar-collapse justify-content-end" id="sukoonMenu">
                 <ul class="navbar-nav gap-4 align-items-center">
-                    <li class="nav-item"><a href="#" class="nav-link active">Home</a></li>
-                    <li class="nav-item"><a href="./components/about.html" class="nav-link">About Us</a></li>
-                    <li class="nav-item"><a href="./components/services.html" class="nav-link">Services</a></li>
+                    <li class="nav-item"><a href="#" class="nav-link  ">Home</a></li>
+                    <li class="nav-item"><a href="#" class="nav-link">About Us</a></li>
+                    <li class="nav-item"><a href="#" class="nav-link">Services</a></li>
                     <li class="nav-item"><a href="#doctors" class="nav-link">Our Team</a></li>
                     <li class="nav-item" id="book">
                         <a href="#contact" class="btn-sukoon">Book Appointment</a>
@@ -1249,12 +1260,12 @@ h5.text-white::after {
             <!-- LEFT SIDE: TEXT CONTENT -->
             <div class="col-lg-6 hero-text" data-aos="fade-right">
                 <span class="tagline">
-                    <i class="fa-solid fa-heart-pulse"></i> SAKOON REHABILITATION
+                    <i class="fa-solid fa-heart-pulse"></i> ROOH REHABILITATION
                 </span>
                 
-                <h1>A Journey to <br> <span class="highlight">Peace & Recovery</span> Starts Here</h1>
+                <h1>Your Path to <br> <span class="highlight">Healing and Hope</span> Begins Here</h1>
                 
-                <p>We provide world-class addiction treatment and psychiatric care in a safe, supportive environment. Reclaim your life with our expert team.</p>
+                <p>We offer comprehensive addiction treatment and mental health care in a secure, compassionate setting. Take back control of your life with our experienced professionals.</p>
                 
                 <div class="hero-btns">
                     <a href="#contact" class="btn-primary-hero">Get Help Now <i class="fa-solid fa-arrow-right ms-2"></i></a>
@@ -1286,7 +1297,7 @@ h5.text-white::after {
                 
                 <!-- Watermark Background -->
                 <div class="watermark-bg">
-                    <img src="./images/logoo.png" alt="Watermark">
+                    <img src="./pics/fav.png" alt="Watermark">
                 </div>
 
                 <!-- Rotation Container -->
@@ -1294,7 +1305,7 @@ h5.text-white::after {
                     
                     <!-- Center Hub (Logo/Icon) -->
                     <div class="center-hub">
-                        <img src="./images/logoo.png" alt="Center Pic" class="hub-img">
+                        <img src="./pics/logoo.png" alt="Center Pic" class="hub-img">
                     </div>
 
                     <!-- Rotating Track -->
@@ -1339,7 +1350,7 @@ h5.text-white::after {
     </div>
 </header>
 <!-- Whatsapp Floating Button -->
-<a href="https://wa.me/923042403452" class="whatsapp-btn" target="_blank" title="Chat with us">
+<a href="https://wa.me/923393217672" class="whatsapp-btn" target="_blank" title="Chat with us">
     <i class="fa-brands fa-whatsapp"></i>
 </a>
     <!--drugsss-->
@@ -1520,9 +1531,9 @@ h5.text-white::after {
             <!-- Left: Text -->
             <div class="col-lg-6 text-center text-lg-start" data-aos="fade-right">
                 <span class="section-subtitle">Our Impact</span>
-                <h2 class="section-title">Restoring Lives, One Step at a Time</h2>
+                <h2 class="section-title">Rebuilding Lives, Step by Step</h2>
                 <p class="section-desc mx-auto mx-lg-0">
-                    We have successfully treated hundreds of Clients, guiding them towards a drug-free and healthy life. Our success rate speaks for our dedication.
+                    We have helped countless individuals achieve lasting recovery, leading them toward a healthier, drug-free life. Our proven results reflect our unwavering commitment to care and healing.
                 </p>
             </div>
 
@@ -1540,7 +1551,7 @@ h5.text-white::after {
                                     <span>+</span>
                                 </div>
                             </div>
-                            <p class="mt-3">Clients Treated</p>
+                            <p class="mt-3">Clients Deal</p>
                         </div>
                     </div>
 
@@ -1609,20 +1620,20 @@ h5.text-white::after {
             
             <div class="video-box">
                 <video autoplay muted loop playsinline class="main-video">
-                    <source src="./images/VDO.mp4" type="video/mp4">
+                    <source src=" #" type="video/mp4">
                     Your browser does not support the video tag.
                 </video>
             </div>
 
             <div class="text-box">
                 <span class="sub-heading">Our Mission</span>
-                <h2>Journey to Recovery</h2>
-                <p>At Sakoon Rehabilitation, we don't just heal bodies; we restore hope. Our comprehensive approach empowers individuals to overcome challenges and thrive, leading to a more fulfilling life.</p>
+                <h2>Path to Recoveryy</h2>
+                <p>At Rooh Rehabilitation, we go beyond physical healing—we rebuild hope. Our holistic approach empowers individuals to overcome challenges, grow stronger, and embrace a more meaningful life.</p>
                 
                 <div class="features-list">
-                    <div class="f-item"><i class="fa-solid fa-check"></i> 24/7 Monitoring</div>
-                    <div class="f-item"><i class="fa-solid fa-check"></i> Expert Doctors</div>
-                    <div class="f-item"><i class="fa-solid fa-check"></i> Family Counseling</div>
+                    <div class="f-item"><i class="fa-solid fa-check"></i> 24/7 Professional Monitoring</div>
+                    <div class="f-item"><i class="fa-solid fa-check"></i> Experienced Medical Specialists</div>
+                    <div class="f-item"><i class="fa-solid fa-check"></i> Dedicated Family Counseling</div>
                 </div> 
             </div>
 
@@ -1652,7 +1663,7 @@ h5.text-white::after {
         <!-- Heading -->
         <div class="text-center mb-5">
             <span class="section-subtitle">Our Environment</span>
-            <h2 class="section-title">Life at Sakoon</h2> 
+            <h2 class="section-title">Life at ROOH</h2> 
         </div>
 
         <div class="row g-3 justify-content-center">
@@ -1664,7 +1675,7 @@ h5.text-white::after {
                 <div class="life-card">
                     <img src="./images/ab1.jpg" alt="Hospital Location" class="life-img">
                     <div class="life-overlay">
-                        <h4>Sakoon Campus</h4>
+                        <h4>Rooh Campus</h4>
                         <p>Peaceful Location</p>
                     </div>
                 </div>
@@ -1789,13 +1800,13 @@ h5.text-white::after {
                     <div class="quote-box">
                         <i class="fa-solid fa-quote-left quote-icon"></i>
                         <p class="ceo-text">
-                            "At Sakoon Rehabilitation, we believe that recovery is not just about stopping an addiction; it's about building a new life. Our mission is to provide a safe, compassionate, and scientifically backed environment where individuals can heal mentally, physically, and emotionally. We are here to guide you from darkness into light."
+                            "At Rooh Rehabilitation, we believe recovery is more than ending addiction—it’s about creating a new beginning. Our mission is to offer a safe, compassionate, and evidence-based environment where individuals heal mentally, physically, and emotionally. With unwavering support, we guide each person from struggle toward hope and lasting renewal."
                         </p>
                     </div>
 
                     <div class="ceo-signature mt-4">
-                        <h4 class="ceo-name">Mr. Muhammad Imran</h4>
-                        <span class="ceo-role">CEO & Clinical Psychologist</span>
+                        <h4 class="ceo-name">Psy Ch. Muhammad Tayyab Ahmad Gujjar</h4>
+                        <span class="ceo-role">CEO & Psychologist</span>
                         
                         <!-- Social Link (Optional) -->
                         <div class="mt-3">
@@ -1809,7 +1820,7 @@ h5.text-white::after {
             <div class="col-lg-6 text-center" data-aos="fade-left">
                 <div class="ceo-img-wrapper">
                     <!-- Apni image ka path lagana -->
-                    <img src="./images/ceoooo-removebg-preview.png" style="background: none;" alt="Mr. Imran - CEO" class="ceo-img">
+                    <img src="./images/ceoooo-removebg-preview.png" style="background: none;" alt=" CEO" class="ceo-img">
                     
                     <!-- Decorative Elements -->
                     <div class="shape-bg"></div>
@@ -1827,15 +1838,15 @@ h5.text-white::after {
             <!-- Column 1: Logo & About -->
             <div class="col-lg-4 col-md-6 mb-4">
                 <div class="footer-logo mb-3">
-                    <img src="./images/logoo.png" alt="Sakoon Rehabilitation Logo" style="height: 60px;">
+                    <img src="./pics/logoo.png" alt="Rooh Rehabilitation Logo" style="height: 60px;">
                 </div>
                 <p class="text-white-50">
-                    Sakoon Rehabilitation Center is dedicated to providing compassionate care for addiction recovery and mental health, helping individuals rebuild their lives with dignity and hope.
+                    Rooh Rehabilitation Center is dedicated to providing compassionate care for addiction recovery and mental health, helping individuals rebuild their lives with dignity and hope.
                 </p>
                 <div class="social-links mt-3">
-                    <a href="https://www.facebook.com/share/16in6jCAmi/?mibextid=wwXIfr" class="text-white me-3"><i class="fab fa-facebook-f"></i></a>
+                    <a href="https://www.facebook.com/roohrehabilitationcenter?rdid=zSNcEs4xJ7sOqZbl&share_url=https%3A%2F%2Fwww.facebook.com%2Fshare%2F17PCzaznRz%2F%3Futm_source%3Dig%26utm_medium%3Dsocial%26utm_content%3Dlink_in_bio#" class="text-white me-3"><i class="fab fa-facebook-f"></i></a>
                     
-                    <a href="https://www.tiktok.com/@sakoonrehab0?_r=1&_t=ZS-91wRI0O2Osa" class="text-white"><i class="fab fa-tiktok"></i></a>
+                    <a href="https://www.instagram.com/roohrehabilitationcenter/" class="text-white"><i class="fab fa-instagram"></i></a>
                 </div>
             </div>
 
@@ -1855,10 +1866,10 @@ h5.text-white::after {
             <div class="col-lg-3 col-md-6 mb-4">
                 <h5 class="text-white mb-3">Contact Us</h5>
                 <ul class="list-unstyled text-white-50 contact-info">
-                    <li class="mb-2"><i class="fas fa-phone me-2 text-primary"></i> +92 309 9846835</li>
-                    <li class="mb-2"><i class="fas fa-phone me-2 text-primary"></i> +92 304 2403452</li>
-                    <li class="mb-2"><i class="fas fa-envelope me-2 text-primary"></i> sakoonrehab@gmail.com</li>
-                    <li><i class="fas fa-map-marker-alt me-2 text-primary"></i> New Multan Colony, Services Road House # 26-X, Near Shah Rukn-E-Alam Metro Station, Multan</li>
+                    <li class="mb-2"><i class="fas fa-phone me-2 text-primary"></i> +92 339 3217672</li>
+                    <li class="mb-2"><i class="fas fa-phone me-2 text-primary"></i> +92 314 3217672</li>
+                    <li class="mb-2"><i class="fas fa-envelope me-2 text-primary"></i> roohrehab@gmail.com</li>
+                    <li><i class="fas fa-map-marker-alt me-2 text-primary"></i> Tahli Chowk Y Block New Satellite Town Sargodha, Sargodha 40100</li>
                 </ul>
             </div>
 
@@ -1867,7 +1878,7 @@ h5.text-white::after {
                 <h5 class="text-white mb-3">Find Us</h5>
                 <div class="footer-map">
                     <iframe 
-                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3448.42454115742!2d71.51354017477163!3d30.196428311355213!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x393b36839fb82987%3A0xc2a0878d3f1c3424!2sMetro%20Bus%20Station%2C%20Shah%20Rukne%20Alam!5e0!3m2!1sen!2s!4v1765905695456!5m2!1sen!2s" 
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d54086.71031847369!2d72.6169024216797!3d32.084949000000016!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x392177002fa09613%3A0xd864a196e1debab2!2sNew%20satellite%20town%20Y%20BLOCK%20*2A!5e0!3m2!1sen!2s!4v1768450656274!5m2!1sen!2s" 
                         width="100%" 
                         height="200" 
                         style="border:0; border-radius: 10px;" 
@@ -1881,7 +1892,7 @@ h5.text-white::after {
         
         <div class="row mt-4 pt-4 border-top border-secondary">
             <div class="col-md-6 text-center text-md-start">
-                <p class="text-white-50 mb-0">&copy; 2025 Sakoon Rehabilitation. All Rights Reserved.</p>
+                <p class="text-white-50 mb-0">&copy; 2026 rooh Rehabilitation. All Rights Reserved.</p>
             </div>
             <div class="col-md-6 text-center text-md-end">
                 <p class="text-white-50 mb-0">Designed by <a href="http://codedclouds.org"><span class="text-primary">CodedClouds</span></a></p>
